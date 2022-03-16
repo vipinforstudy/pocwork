@@ -7,13 +7,13 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SearchResourceComponent } from './search-resource/search-resource.component';
-import { ServicesComponent } from './services/services.component';
+// import { ServicesComponent } from './services/services.component';
 
 
 const routes: Routes = [
 
 {path:'home',component:HomeComponent},
-{path:'services',component:ServicesComponent},
+// {path:'services',component:ServicesComponent},
 {path:'Addresourcemanagement',component:AddResourceComponent},
 {path:'Deleteresourcemanagement',component:DeleteResourceComponent},
 {path:'Updateresourcemanagement',component:UpdateResourceComponent},

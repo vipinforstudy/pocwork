@@ -14,7 +14,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
-import { ServicesComponent } from './services/services.component';
+// import { ServicesComponent } from './services/services.component';
 import { SearchResourceComponent } from './search-resource/search-resource.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -23,6 +23,7 @@ import {MatDatepickerModule,} from '@angular/material/datepicker';
 import {MatNativeDateModule,} from '@angular/material/core';
 import { ResourceManagementComponent } from './resource-management/resource-management.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
  @NgModule({
@@ -34,7 +35,7 @@ import {MatRadioModule} from '@angular/material/radio';
     DeleteResourceComponent,
     LoginComponent,
     HomeComponent,
-    ServicesComponent,
+    // ServicesComponent,
     SearchResourceComponent,
     ResourceManagementComponent,
   ],
@@ -51,7 +52,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatInputModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatRadioModule
+    MatRadioModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
