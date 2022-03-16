@@ -1,0 +1,38 @@
+<h1 mat-dialog-title>Add Resource</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="legacy">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name">
+    </mat-form-field>
+    <mat-form-field style="margin-left: 10px" appearance="legacy">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name">
+    </mat-form-field>
+    <mat-form-field style="margin-left: 30px" appearance="legacy">
+        <mat-label>Company Name</mat-label>
+        <input matInput placeholder="Company Name">
+    </mat-form-field>
+    <mat-form-field appearance="legacy">
+        <mat-label>Designation</mat-label>
+        <input matInput placeholder="Designation">
+    </mat-form-field>
+
+    <mat-radio-group style="margin-left: 10px" aria-label="Gender">
+        <mat-label>Gender</mat-label>
+        <mat-radio-button style="margin-left: 10px"  value="1">Male</mat-radio-button>
+        <mat-radio-button style="margin-left: 10px"  value="2">Female</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field style="margin-left: 15px" appearance="legacy">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+</div>
+
+<div mat-Dialog-Action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close> Cancel</button>
+    <button style="margin-left: 8px" mat-raised-button color="primary" mat-dialog-close>Add Resource</button>
+</div>

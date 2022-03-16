@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Search Resource</h1>
+<div mat-dialog-content>
+    <mat-form-field appearance="outline">
+        <mat-label>Resource First Name</mat-label>
+        <input matInput placeholder="Resource First Name">
+      </mat-form-field>
+      <mat-form-field style="margin-left: 10px"appearance="outline">
+        <mat-label>Resource Last Name</mat-label>
+        <input matInput placeholder="Resource Last Name">
+      </mat-form-field> 
+      <mat-form-field  appearance="outline">
+        <mat-label>Company Name</mat-label>
+        <input matInput placeholder="Company Name">
+      </mat-form-field>
+
+      <mat-form-field style="margin-left: 10px" appearance="outline">
+        <mat-label>Date of Birth</mat-label>
+        <input matInput [matDatepicker]="picker"> 
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+</div>
+
+<div mat-Dialog-Action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close> Cancel</button>
+    <button style="margin-left: 8px" mat-raised-button color="primary" mat-dialog-close>Search</button>
+</div>
