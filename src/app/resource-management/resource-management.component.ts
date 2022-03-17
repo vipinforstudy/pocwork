@@ -7,13 +7,22 @@ import { UserResource } from '../resource/userResource';
   styleUrls: ['./resource-management.component.css']
 })
 export class ResourceManagementComponent implements OnInit {
+  userId : String = ""
+  name : String = ""
+  address : String = ""
+  email : String = ""
 
+  user!: UserResource; 
+
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  create(user : String) {
+  create() {
+    this.user.id = this.userId
+
     console.log("Im here ...")
   }
 

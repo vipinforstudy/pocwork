@@ -24,6 +24,7 @@ import {MatNativeDateModule,} from '@angular/material/core';
 import { ResourceManagementComponent } from './resource-management/resource-management.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
  @NgModule({
@@ -53,7 +54,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
