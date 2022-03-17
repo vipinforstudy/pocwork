@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserResource } from '../resource/userResource';
 
 @Component({
   selector: 'app-resource-management',
@@ -10,6 +11,10 @@ export class ResourceManagementComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  create(user : String) {
+    console.log("Im here ...")
   }
 
 }

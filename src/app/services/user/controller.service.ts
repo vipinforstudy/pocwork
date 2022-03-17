@@ -15,4 +15,20 @@ export class ControllerService {
   getAllUsers(): Observable<UserResource[]> {
     return this.httpClient.get<UserResource[]>(this.userUrl + '/users')
   }
+
+  getUserByName(name : String): Observable<UserResource[]> {
+    return this.httpClient.get<UserResource[]>(this.userUrl + '/users/' + name)
+  }
+
+  update(name : String, user : UserResource) {
+    this.httpClient.put(this.userUrl + '/users/' + name, user)
+  }
+
+  post(user : UserResource) {
+    this.httpClient.post(this.userUrl + '/users', user)
+  }
+
+  delete(name : String) {
+    this.httpClient.delete(this.userUrl + '/users' + name) 
+  }
 }
