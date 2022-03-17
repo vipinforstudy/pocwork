@@ -26,7 +26,10 @@ export class ResourceManagementComponent implements OnInit {
     this.user.address = this.userAddress
     this.user.email = this.userEmail
 
-    this.service.post(this.user)
+    this.service.post(this.user).subscribe({
+      next:  (response) => console.log(response),
+      error: (err) => console.log('error', err)
+    })
   }
 
 }

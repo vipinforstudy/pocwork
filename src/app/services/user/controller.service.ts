@@ -25,12 +25,13 @@ export class ControllerService {
     this.httpClient.put(this.userUrl + '/users/' + name, user)
   }
 
-  post(user : UserResource) {
+  post(user : UserResource) : Observable<any> {
     const headers = new HttpHeaders()
       .set('content-type', 'application/vnd.spring-template.user.v1+json')
+      .set('accept', 'application/vnd.spring-template.user.v1+json')
       .set('Access-Control-Allow-Origin', '*');
 
-    this.httpClient.post(this.userUrl + '/users', user, {headers})
+    return this.httpClient.post(this.userUrl + '/users', user, {headers})
   }
 
   delete(name : String) {
