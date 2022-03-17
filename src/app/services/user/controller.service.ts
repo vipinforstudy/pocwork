@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserResource } from '../../resource/userResource'
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,11 @@ export class ControllerService {
   }
 
   post(user : UserResource) {
-    this.httpClient.post(this.userUrl + '/users', user)
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/vnd.spring-template.user.v1+json')
+      .set('Access-Control-Allow-Origin', '*');
+
+    this.httpClient.post(this.userUrl + '/users', user, {headers})
   }
 
   delete(name : String) {

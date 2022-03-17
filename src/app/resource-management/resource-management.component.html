@@ -6,15 +6,15 @@
     </mat-form-field>
     <mat-form-field style="margin-left: 10px" appearance="legacy">
         <mat-label>Name</mat-label>
-        <input matInput placeholder="Name">
+        <input matInput placeholder="Name" [(ngModel)] = 'userName'>
     </mat-form-field>
     <mat-form-field style="margin-left: 30px" appearance="legacy">
         <mat-label>Address</mat-label>
-        <input matInput placeholder="Address">
+        <input matInput placeholder="Address" [(ngModel)] = 'userAddress'>
     </mat-form-field>
     <mat-form-field appearance="legacy">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="Email">
+        <input matInput placeholder="Email" [(ngModel)] = 'userEmail'>
     </mat-form-field>
 
     <!-- <mat-radio-group style="margin-left: 10px" aria-label="Gender">
@@ -34,5 +34,5 @@
 
 <div mat-Dialog-Action [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close> Cancel</button>
-    <button (click) = "create('Name Example')" style="margin-left: 8px" mat-raised-button color="primary" mat-dialog-close>Add Resource</button>
+    <button (click) = "create()" style="margin-left: 8px" mat-raised-button color="primary" mat-dialog-close>Add Resource</button>
 </div>

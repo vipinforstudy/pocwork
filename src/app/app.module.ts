@@ -23,7 +23,7 @@ import {MatDatepickerModule,} from '@angular/material/datepicker';
 import {MatNativeDateModule,} from '@angular/material/core';
 import { ResourceManagementComponent } from './resource-management/resource-management.component';
 import {MatRadioModule} from '@angular/material/radio';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 

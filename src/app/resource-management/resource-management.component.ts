@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserResource } from '../resource/userResource';
+import { ControllerService } from '../services/user/controller.service';
 
 @Component({
   selector: 'app-resource-management',
@@ -8,22 +9,24 @@ import { UserResource } from '../resource/userResource';
 })
 export class ResourceManagementComponent implements OnInit {
   userId : String = ""
-  name : String = ""
-  address : String = ""
-  email : String = ""
+  userName : String = ""
+  userAddress : String = ""
+  userEmail : String = ""
 
-  user!: UserResource; 
-
+  user : UserResource = {id : "", name : "", address : "", email : ""}; 
   
-  constructor() { }
+  constructor(private service : ControllerService) { }
 
   ngOnInit(): void {
   }
 
   create() {
     this.user.id = this.userId
+    this.user.name = this.userName
+    this.user.address = this.userAddress
+    this.user.email = this.userEmail
 
-    console.log("Im here ...")
+    this.service.post(this.user)
   }
 
 }
