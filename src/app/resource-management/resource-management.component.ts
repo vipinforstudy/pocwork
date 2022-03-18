@@ -12,6 +12,7 @@ export class ResourceManagementComponent implements OnInit {
   userName : String = ""
   userAddress : String = ""
   userEmail : String = ""
+  users: UserResource[] = []
 
   user : UserResource = {id : "", name : "", address : "", email : ""}; 
   
@@ -32,4 +33,17 @@ export class ResourceManagementComponent implements OnInit {
     })
   }
 
+  search() {
+    if (this.userName == "") {
+      this.service.getAllUsers().subscribe({
+        next:  (allUsers) => this.users = allUsers,
+        error: (err) => console.log('error', err)
+      })
+    } else {
+      this.service.getUserByName(this.userName).subscribe({
+        next:  (allUsers) => this.users = allUsers,
+        error: (err) => console.log('error', err)
+      })
+    }
+  }
 }

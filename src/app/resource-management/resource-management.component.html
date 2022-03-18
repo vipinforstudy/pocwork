@@ -17,19 +17,7 @@
         <input matInput placeholder="Email" [(ngModel)] = 'userEmail'>
     </mat-form-field>
 
-    <!-- <mat-radio-group style="margin-left: 10px" aria-label="Gender">
-        <mat-label>Gender</mat-label>
-        <mat-radio-button style="margin-left: 10px"  value="1">Male</mat-radio-button>
-        <mat-radio-button style="margin-left: 10px"  value="2">Female</mat-radio-button>
-      </mat-radio-group>
-
-      <mat-form-field style="margin-left: 15px" appearance="legacy">
-        <mat-label>Date of Birth</mat-label>
-        <input matInput [matDatepicker]="picker">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field> -->
-
+    <button (click) = "search()" style="margin-left: 8px" mat-raised-button mat-dialog-close>Search</button>
 </div>
 
 <div mat-Dialog-Action [align]="'end'">
