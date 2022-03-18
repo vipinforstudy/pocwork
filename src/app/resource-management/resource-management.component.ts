@@ -13,13 +13,18 @@ export class ResourceManagementComponent implements OnInit {
   userAddress : String = ""
   userEmail : String = ""
   users: UserResource[] = []
-
   user : UserResource = {id : "", name : "", address : "", email : ""}; 
+  selectedUser?: UserResource
   
   constructor(private service : ControllerService) { }
 
   ngOnInit(): void {
   }
+
+  onSelect(user: UserResource): void {
+    this.selectedUser = user;
+  }
+
 
   create() {
     this.user.id = this.userId
