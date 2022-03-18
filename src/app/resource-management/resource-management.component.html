@@ -21,35 +21,53 @@
 </div>
 
 <div>
-    <h2>All Users</h2>
-    <ul class="heroes">
-        <li *ngFor="let user of users">
-            <span class="badge">{{user.name}}</span> {{user.name}}
-        </li>
-    </ul>
-
     <!-- --------------- -->
     <h2>All Users</h2>
     <ul class="users">
         <li *ngFor="let user of users">
             <button [class.selected]="user === selectedUser" type="button" (click)="onSelect(user)">
-            <span class="badge">{{user.id}}</span>
-            <span class="name">{{user.name}}</span>
-            <span class="name">{{user.address}}</span>
-            <span class="name">{{user.email}}</span>
+                <div><span class="badge">{{user.id}}</span></div>
+                <div><span class="name">{{user.name}}</span></div>/
+                <div><span class="name">{{user.address}}</span></div>/
+                <div><span class="name">{{user.email}}</span></div>
             </button>
         </li>
     </ul>
-
+    <hr>
     <div *ngIf="selectedUser">
         <h2>{{selectedUser.name | uppercase}} Details</h2>
         <div>
             id: {{selectedUser.id}}
         </div>
         <div>
-            <label for="user-name">Hero name: </label>
-            <input id="user-name" [(ngModel)]="selectedUser.name" placeholder="name">
+            <label for="user-id">Id: </label>
+            <input id="user-id" [(ngModel)]="selectedUser.id" placeholder="Id">
+            <label for="user-name">Name: </label>
+            <input id="user-name" [(ngModel)]="selectedUser.name" placeholder="Name">
+            <label for="user-address">Address: </label>
+            <input id="user-address" [(ngModel)]="selectedUser.address" placeholder="Address">
+            <label for="user-email">Email: </label>
+            <input id="user-email" [(ngModel)]="selectedUser.email" placeholder="Email">
+            <button mat-raised-button color="warn" mat-dialog-close> Cancel</button>
+            <button (click) = "update()" style="margin-left: 8px" mat-raised-button color="primary" mat-dialog-close>Update</button>
         </div>
+    </div>
+    <hr>
+    <div>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Email</th>
+              </tr>
+            <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.address }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+          </table>
     </div>
     <!-- --------------- -->
 </div>

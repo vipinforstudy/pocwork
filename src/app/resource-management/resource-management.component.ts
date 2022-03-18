@@ -8,12 +8,12 @@ import { ControllerService } from '../services/user/controller.service';
   styleUrls: ['./resource-management.component.css']
 })
 export class ResourceManagementComponent implements OnInit {
-  userId : String = ""
-  userName : String = ""
-  userAddress : String = ""
-  userEmail : String = ""
+  userId : string = ""
+  userName : string = ""
+  userAddress : string = ""
+  userEmail : string = ""
   users: UserResource[] = []
-  user : UserResource = {id : "", name : "", address : "", email : ""}; 
+  user : UserResource = {id :  "", name : "", address : "", email : ""}; 
   selectedUser?: UserResource
   
   constructor(private service : ControllerService) { }
@@ -36,6 +36,15 @@ export class ResourceManagementComponent implements OnInit {
       next:  (response) => console.log(response),
       error: (err) => console.log('error', err)
     })
+  }
+
+  update() {
+    this.user.id = this.userId
+    this.user.name = this.userName
+    this.user.address = this.userAddress
+    this.user.email = this.userEmail
+
+    this.service.update(this.user.name, this.user)
   }
 
   search() {

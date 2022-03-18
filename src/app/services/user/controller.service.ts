@@ -22,7 +22,12 @@ export class ControllerService {
   }
 
   update(name : String, user : UserResource) {
-    this.httpClient.put(this.userUrl + '/users/' + name, user)
+    const headers = new HttpHeaders()
+      .set('content-type', 'application/vnd.spring-template.user.v1+json')
+      .set('accept', 'application/vnd.spring-template.user.v1+json')
+      .set('Access-Control-Allow-Origin', '*');
+
+    this.httpClient.put(this.userUrl + '/users/' + name, user, {headers})
   }
 
   post(user : UserResource) : Observable<any> {
